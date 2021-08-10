@@ -6,7 +6,6 @@ class UserTest extends TestCase
 {
     public function testCanGetUsersFullName()
     {
-        require 'User.php';
 
         $user = new User();
 
