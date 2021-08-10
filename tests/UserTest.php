@@ -6,7 +6,6 @@ class UserTest extends TestCase
 {
     public function testCanGetUsersFullName()
     {
-
         $user = new User();
 
         $user->first_name = 'John';
