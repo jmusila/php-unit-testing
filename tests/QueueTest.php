@@ -26,11 +26,20 @@ class QueueTest extends TestCase
     public function testAnItemIsREmoveFromTheQueue()
     {
         $this->queue->push('John');
-        
+
         $item = $this->queue->pop();
 
         $this->assertEquals(0, $this->queue->getCount());
 
         $this->assertEquals('John', $item);
+    }
+
+    public function testAnItemIsRemovedFromTheFrontOfTheQueue()
+    {
+        $this->queue->push('Item1');
+
+        $this->queue->push('Item2');
+
+        $this->assertEquals('Item1', $this->queue->pop());
     }
 }
