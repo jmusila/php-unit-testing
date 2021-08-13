@@ -4,18 +4,20 @@ use PHPUnit\Framework\TestCase;
 
 class QueueTest extends TestCase
 {
-    public function testNewQueueIsEmpty()
+    protected $queue;
+
+    protected function setUp(): void
     {
-        $queue = new Queue();
-
-        $this->assertEquals(0, $queue->getCount());
-
-        return $queue;
+        $this->queue = new Queue();
     }
 
-    /**
-     * @depends testNewQueueIsEmpty
-     */
+    public function testNewQueueIsEmpty()
+    {
+        $this->assertEquals(0, $this->queue->getCount());
+
+        return $$this->queue;
+    }
+
     public function testAnItemIsAddedToTHeQueue(Queue $queue)
     {
         $queue->push('John');
@@ -24,7 +26,7 @@ class QueueTest extends TestCase
 
         return $queue;
     }
-    
+
     /**
      * @depends testAnItemIsAddedToTHeQueue
      */
