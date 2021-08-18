@@ -17,6 +17,6 @@ class User
     {
         $mailer = new Mailer();
 
-        $mailer->sendMessage($this->email, $message);
+        return $mailer->sendMessage($this->email, $message);
     }
 }

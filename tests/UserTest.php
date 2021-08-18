@@ -27,9 +27,7 @@ class UserTest extends TestCase
 
         $user->email = 'johndoe@gmail.com';
 
-        $user->notify("Hello");
-
-        
+        $this->assertTrue($user->notify("Hello"));
     }
 
 }
