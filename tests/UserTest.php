@@ -21,13 +21,15 @@ class UserTest extends TestCase
         $this->assertEquals('', $user->getFullName());
     }
 
-    public function testUserHasFirstName()
+    public function testNotificationIsSent()
     {
-        $user = new User();
+        $user = new User;
 
-        $user->first_name = 'John';
-        $user->surname = 'Doe';
+        $user->email = 'johndoe@gmail.com';
 
-        $this->assertEquals('John', $user->first_name);
+        $user->notify("Hello");
+
+        
     }
+
 }
